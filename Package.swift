@@ -6,9 +6,9 @@ import PackageDescription
 let package = Package(
     name: "ARCraft",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v17),
         .visionOS(.v1),
-        .macOS(.v13)
+        .macOS(.v14)
     ],
     products: [
         .library(
