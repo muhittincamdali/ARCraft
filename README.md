@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="Assets/logo.png" alt="ARCraft" width="200"/>
-</p>
-
 <h1 align="center">ARCraft</h1>
 
 <p align="center">
