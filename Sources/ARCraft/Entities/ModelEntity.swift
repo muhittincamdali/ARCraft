@@ -222,7 +222,7 @@ public struct BoundingBox: Sendable, Equatable {
 /// let model = ModelEntity(modelNamed: "robot.usdz")
 /// try await model.load()
 /// ```
-public class ModelEntity: ARCraftEntity {
+public class ModelEntity: ARCraftEntity, @unchecked Sendable {
     
     // MARK: - Properties
     

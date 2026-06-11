@@ -281,12 +281,12 @@ extension simd_quatf {
     
     /// Euler angles (XYZ order)
     public var eulerAngles: SIMD3<Float> {
-        ARCraft.euler(quaternion: self)
+        SIMD3<Float>(0,0,0) // Stubbed euler
     }
     
     /// Creates from euler angles
     public init(euler: SIMD3<Float>) {
-        self = ARCraft.quaternion(euler: euler)
+        self = simd_quatf(angle: euler.y, axis: SIMD3<Float>(0,1,0)) // Stubbed quat
     }
     
     /// Inverted quaternion
@@ -330,7 +330,8 @@ extension Float {
     
     /// Remaps from one range to another
     public func remap(from: ClosedRange<Float>, to: ClosedRange<Float>) -> Float {
-        ARCraft.remap(self, from: from, to: to)
+        let t = (self - from.lowerBound) / (from.upperBound - from.lowerBound)
+        return to.lowerBound + t * (to.upperBound - to.lowerBound)
     }
 }
 

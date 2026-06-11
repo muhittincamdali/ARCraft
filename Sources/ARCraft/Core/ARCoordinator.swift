@@ -141,7 +141,8 @@ public struct ARInteraction: Sendable {
 // MARK: - Scene Graph
 
 /// Manages the hierarchy of entities in the AR scene.
-public final class ARSceneGraph: @unchecked Sendable {
+@MainActor
+public final class ARSceneGraph: Sendable {
     
     /// Root entity of the scene
     private var rootEntity: ARCraftEntity?
@@ -337,7 +338,7 @@ public final class ARCoordinator: ObservableObject {
     // MARK: - Initialization
     
     /// Creates a new coordinator with the given session.
-    public init(session: ARCraftSession = .shared) {
+    public init(session: ARCraftSession) {
         self.session = session
         self.sceneGraph = ARSceneGraph()
         setupBindings()

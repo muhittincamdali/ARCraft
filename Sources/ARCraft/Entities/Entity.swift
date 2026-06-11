@@ -50,7 +50,7 @@ public struct Transform3D: Sendable, Equatable {
         let sz = length(SIMD3<Float>(matrix.columns.2.x, matrix.columns.2.y, matrix.columns.2.z))
         self.scale = SIMD3<Float>(sx, sy, sz)
         
-        var rotMatrix = simd_float3x3(
+        let rotMatrix = simd_float3x3(
             SIMD3<Float>(matrix.columns.0.x, matrix.columns.0.y, matrix.columns.0.z) / sx,
             SIMD3<Float>(matrix.columns.1.x, matrix.columns.1.y, matrix.columns.1.z) / sy,
             SIMD3<Float>(matrix.columns.2.x, matrix.columns.2.y, matrix.columns.2.z) / sz

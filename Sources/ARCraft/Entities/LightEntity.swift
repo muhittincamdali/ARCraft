@@ -194,7 +194,7 @@ public struct ShadowSettings: Sendable, Equatable {
 /// )
 /// lamp.transform.position = SIMD3(0, 2, 0)
 /// ```
-public class LightEntity: ARCraftEntity {
+public class LightEntity: ARCraftEntity, @unchecked Sendable {
     
     // MARK: - Properties
     

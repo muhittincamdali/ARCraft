@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import simd
 
 /// ARCraft version information.
 public enum ARCraftVersion {
@@ -175,7 +176,7 @@ public typealias Light = LightEntity
 
 // Materials
 public typealias Material = PBRMaterial
-public typealias MaterialBuilder = ARCraft.MaterialBuilder
+
 
 // Convenience type aliases for common SIMD types
 public typealias Float2 = SIMD2<Float>

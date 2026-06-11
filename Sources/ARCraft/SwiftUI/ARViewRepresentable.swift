@@ -327,7 +327,7 @@ public extension ARCraftViewRepresentable {
     /// Creates with default session
     init() {
         self.init(
-            arView: ARCraftView(),
+            arView: ARCraftView(session: ARCraftSession()),
             configuration: ARViewConfiguration()
         )
     }
@@ -335,7 +335,7 @@ public extension ARCraftViewRepresentable {
     /// Creates with custom configuration
     init(configuration: ARViewConfiguration) {
         self.init(
-            arView: ARCraftView(configuration: configuration),
+            arView: ARCraftView(configuration: configuration, session: ARCraftSession()),
             configuration: configuration
         )
     }

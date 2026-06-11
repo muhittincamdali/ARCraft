@@ -87,15 +87,15 @@ public enum EasingFunction: String, Sendable, CaseIterable {
             return t < 0.5 ? 4 * t * t * t : 1 - pow(-2 * t + 2, 3) / 2
             
         case .easeInExpo:
-            return t == 0 ? 0 : pow(2, 10 * t - 10)
+            return t == 0 ? 0 : pow(2.0, 10.0 * t - 10.0)
             
         case .easeOutExpo:
-            return t == 1 ? 1 : 1 - pow(2, -10 * t)
+            return t == 1 ? 1 : 1 - pow(2.0, -10.0 * t)
             
         case .easeInOutExpo:
             if t == 0 { return 0 }
             if t == 1 { return 1 }
-            return t < 0.5 ? pow(2, 20 * t - 10) / 2 : (2 - pow(2, -20 * t + 10)) / 2
+            return t < 0.5 ? pow(2.0, 20.0 * t - 10.0) / 2 : (2 - pow(2.0, -20.0 * t + 10.0)) / 2
             
         case .easeInBack:
             let c1: Float = 1.70158
@@ -115,24 +115,36 @@ public enum EasingFunction: String, Sendable, CaseIterable {
                 : (pow(2 * t - 2, 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2
             
         case .easeInElastic:
-            let c4 = (2 * .pi) / 3
+            let c4 = Float((2 * Double.pi) / 3)
             if t == 0 { return 0 }
             if t == 1 { return 1 }
-            return -pow(2, 10 * t - 10) * sin((t * 10 - 10.75) * c4)
+            let p = pow(2.0, 10.0 * t - 10.0)
+            let s = sin((t * 10.0 - 10.75) * c4)
+            return -p * s
             
         case .easeOutElastic:
-            let c4 = (2 * .pi) / 3
+            let c4 = Float((2 * Double.pi) / 3)
             if t == 0 { return 0 }
             if t == 1 { return 1 }
-            return pow(2, -10 * t) * sin((t * 10 - 0.75) * c4) + 1
+            let p = pow(2.0, -10.0 * t)
+            let s = sin((t * 10.0 - 0.75) * c4)
+            return p * s + 1
             
         case .easeInOutElastic:
             let c5 = (2 * .pi) / 4.5
             if t == 0 { return 0 }
             if t == 1 { return 1 }
-            return t < 0.5
-                ? -(pow(2, 20 * t - 10) * sin((20 * t - 11.125) * c5)) / 2
-                : (pow(2, -20 * t + 10) * sin((20 * t - 11.125) * c5)) / 2 + 1
+            if t < 0.5 {
+                let tD = Double(t)
+                let p = Float(pow(2.0, 20.0 * tD - 10.0))
+                let s = Float(sin((20.0 * tD - 11.125) * Double(c5)))
+                return -(p * s) / 2
+            } else {
+                let tD = Double(t)
+                let p = Float(pow(2.0, -20.0 * tD + 10.0))
+                let s = Float(sin((20.0 * tD - 11.125) * Double(c5)))
+                return (p * s) / 2 + 1
+            }
             
         case .easeInBounce:
             return 1 - EasingFunction.easeOutBounce.evaluate(1 - t)

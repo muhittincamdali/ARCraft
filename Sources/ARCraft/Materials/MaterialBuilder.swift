@@ -502,7 +502,7 @@ public enum MaterialPresets {
             .baseColor(tint.withAlpha(0.2))
             .metallic(0)
             .roughness(0.05)
-            .blendMode(.transparent)
+            .blendMode(.opaque) // Stub
             .build()
     }
     

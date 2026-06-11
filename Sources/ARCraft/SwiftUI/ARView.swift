@@ -206,7 +206,7 @@ public final class ARCraftView: ObservableObject {
     /// Creates an AR view
     public init(
         configuration: ARViewConfiguration = ARViewConfiguration(),
-        session: ARCraftSession = .shared
+        session: ARCraftSession
     ) {
         self.configuration = configuration
         self.state = ARViewState()

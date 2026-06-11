@@ -600,6 +600,7 @@ public final class ARCraftSession: ObservableObject {
 /// Factory for creating pre-configured AR sessions.
 public enum ARSessionFactory {
     /// Creates a session optimized for world tracking
+    @MainActor
     public static func worldTrackingSession() -> ARCraftSession {
         let config = ARCraftConfiguration()
         config.trackingMode = .world
@@ -608,6 +609,7 @@ public enum ARSessionFactory {
     }
     
     /// Creates a session optimized for image tracking
+    @MainActor
     public static func imageTrackingSession() -> ARCraftSession {
         let config = ARCraftConfiguration()
         config.trackingMode = .image
@@ -615,6 +617,7 @@ public enum ARSessionFactory {
     }
     
     /// Creates a session optimized for face tracking
+    @MainActor
     public static func faceTrackingSession() -> ARCraftSession {
         let config = ARCraftConfiguration()
         config.trackingMode = .face
@@ -622,6 +625,7 @@ public enum ARSessionFactory {
     }
     
     /// Creates a session with minimal resource usage
+    @MainActor
     public static func lightweightSession() -> ARCraftSession {
         let config = ARCraftConfiguration()
         config.trackingMode = .world

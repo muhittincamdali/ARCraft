@@ -358,6 +358,7 @@ public final class WorldMapManager: @unchecked Sendable {
     }
     
     /// Creates map data from current session.
+    @MainActor
     public func createMapData(
         from session: ARCraftSession,
         coordinator: ARCoordinator,
