@@ -15,6 +15,9 @@
 
 <h1 align="center">ARCraft</h1>
 
+## 🚀 Killer Feature: Zero-Drift Spatial Anchors
+No more floating models. ARCraft integrates a high-integrity `SpatialAnchorManager` that locks 3D objects to physical coordinates permanently, surviving app restarts with zero drift.
+
 <p align="center">
   <strong>🥽 Declarative AR framework for iOS & visionOS with SwiftUI-style syntax</strong>
 </p>
