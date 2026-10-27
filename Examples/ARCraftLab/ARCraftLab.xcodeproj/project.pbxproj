@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		185EF9BDB06B801B832F50CC /* PersistenceLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73B460D8BE89214281F5E8 /* PersistenceLabView.swift */; };
+		53F65E9634380281BED90A08 /* HandSkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30375180E72556768BA3FE67 /* HandSkeletonView.swift */; };
+		7F8A3E9D27C5904F7F4190CA /* SmoothingLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD519515BEDFE4F0A4B73A74 /* SmoothingLabView.swift */; };
+		808ACBAB4C6799221CA24EAF /* PlacementLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE357D9E7032E9C8A9FDA88 /* PlacementLabView.swift */; };
+		A4EC8F281B3B826A47416E28 /* ReadmeSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0D6BB22C082E62345D33AF /* ReadmeSamples.swift */; };
+		AC71747D477E076E170CCC43 /* LabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67A0753DA38A0D8225980C /* LabView.swift */; };
+		CDF42CFBFC0B9208DACE06D5 /* ARCraft in Frameworks */ = {isa = PBXBuildFile; productRef = 6472FD280FEC3054E9EBF4C4 /* ARCraft */; };
+		D75FB7AEA08F9732EE8B80FD /* LiveSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D14DF447C8DB0F3A387C21 /* LiveSpaceView.swift */; };
+		DD1AE7C054714E29375DA08E /* ARCraftLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84CC260CA0EA2761970D596 /* ARCraftLabApp.swift */; };
+		FEA8C61EA92C7DE71C2ACCC5 /* LiveSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A499919D42BC237915B42D6 /* LiveSpaceModel.swift */; };
+		FED4CE2DD0BA80D3914633B9 /* GestureLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85893C171122C1A10C959C2 /* GestureLabView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D67A0753DA38A0D8225980C /* LabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabView.swift; sourceTree = "<group>"; };
+		27D14DF447C8DB0F3A387C21 /* LiveSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveSpaceView.swift; sourceTree = "<group>"; };
+		30375180E72556768BA3FE67 /* HandSkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSkeletonView.swift; sourceTree = "<group>"; };
+		7B73B460D8BE89214281F5E8 /* PersistenceLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLabView.swift; sourceTree = "<group>"; };
+		7E807829905F6348816E1C8E /* ARCraftLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ARCraftLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A499919D42BC237915B42D6 /* LiveSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveSpaceModel.swift; sourceTree = "<group>"; };
+		B85893C171122C1A10C959C2 /* GestureLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureLabView.swift; sourceTree = "<group>"; };
+		BCE357D9E7032E9C8A9FDA88 /* PlacementLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementLabView.swift; sourceTree = "<group>"; };
+		DD519515BEDFE4F0A4B73A74 /* SmoothingLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothingLabView.swift; sourceTree = "<group>"; };
+		DE0D6BB22C082E62345D33AF /* ReadmeSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeSamples.swift; sourceTree = "<group>"; };
+		F84CC260CA0EA2761970D596 /* ARCraftLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCraftLabApp.swift; sourceTree = "<group>"; };
+		FF60C50B3F92BFA1FA24458C /* ARCraft */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ARCraft; path = ../..; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		672D4184ED3DBECC2596FC53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDF42CFBFC0B9208DACE06D5 /* ARCraft in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E3D2663725EAD35D4259D0A = {
+			isa = PBXGroup;
+			children = (
+				BEC12BD64C900C4C50CF7A2F /* ARCraftLab */,
+				A9DC3FD152751EA51B5C10DD /* Packages */,
+				73EDCA21BAD7AC28831B8134 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73EDCA21BAD7AC28831B8134 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E807829905F6348816E1C8E /* ARCraftLab.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9DC3FD152751EA51B5C10DD /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				FF60C50B3F92BFA1FA24458C /* ARCraft */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		BEC12BD64C900C4C50CF7A2F /* ARCraftLab */ = {
+			isa = PBXGroup;
+			children = (
+				F84CC260CA0EA2761970D596 /* ARCraftLabApp.swift */,
+				B85893C171122C1A10C959C2 /* GestureLabView.swift */,
+				30375180E72556768BA3FE67 /* HandSkeletonView.swift */,
+				0D67A0753DA38A0D8225980C /* LabView.swift */,
+				9A499919D42BC237915B42D6 /* LiveSpaceModel.swift */,
+				27D14DF447C8DB0F3A387C21 /* LiveSpaceView.swift */,
+				7B73B460D8BE89214281F5E8 /* PersistenceLabView.swift */,
+				BCE357D9E7032E9C8A9FDA88 /* PlacementLabView.swift */,
+				DE0D6BB22C082E62345D33AF /* ReadmeSamples.swift */,
+				DD519515BEDFE4F0A4B73A74 /* SmoothingLabView.swift */,
+			);
+			path = ARCraftLab;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EBF8FD995AE80B286942371 /* ARCraftLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09DEA95614E1FE58159EA21F /* Build configuration list for PBXNativeTarget "ARCraftLab" */;
+			buildPhases = (
+				AFA3695370A6EA5298C98EBF /* Sources */,
+				672D4184ED3DBECC2596FC53 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARCraftLab;
+			packageProductDependencies = (
+				6472FD280FEC3054E9EBF4C4 /* ARCraft */,
+			);
+			productName = ARCraftLab;
+			productReference = 7E807829905F6348816E1C8E /* ARCraftLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDEA415BB1666A49FA56264C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3EBF8FD995AE80B286942371 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3964AB3AA78628AA2A7A7364 /* Build configuration list for PBXProject "ARCraftLab" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6E3D2663725EAD35D4259D0A;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				588AAF033FE1BA92B85F681A /* XCLocalSwiftPackageReference "../.." */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 73EDCA21BAD7AC28831B8134 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EBF8FD995AE80B286942371 /* ARCraftLab */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFA3695370A6EA5298C98EBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD1AE7C054714E29375DA08E /* ARCraftLabApp.swift in Sources */,
+				FED4CE2DD0BA80D3914633B9 /* GestureLabView.swift in Sources */,
+				53F65E9634380281BED90A08 /* HandSkeletonView.swift in Sources */,
+				AC71747D477E076E170CCC43 /* LabView.swift in Sources */,
+				FEA8C61EA92C7DE71C2ACCC5 /* LiveSpaceModel.swift in Sources */,
+				D75FB7AEA08F9732EE8B80FD /* LiveSpaceView.swift in Sources */,
+				185EF9BDB06B801B832F50CC /* PersistenceLabView.swift in Sources */,
+				808ACBAB4C6799221CA24EAF /* PlacementLabView.swift in Sources */,
+				A4EC8F281B3B826A47416E28 /* ReadmeSamples.swift in Sources */,
+				7F8A3E9D27C5904F7F4190CA /* SmoothingLabView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2909AFE299BA9CE6B4D879D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ARCraft Lab";
+				INFOPLIST_KEY_NSHandsTrackingUsageDescription = "ARCraft Lab follows your index fingertip and recognizes pinches to place cubes.";
+				INFOPLIST_KEY_NSWorldSensingUsageDescription = "ARCraft Lab anchors the cubes you place to the room so they are still there next time.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.muhittincamdali.ARCraftLab;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		91A303B55EFEE7D3E836CDCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		C7F09FD0113E43180E4C22D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		F77114FB67BA3443B5FFE3AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ARCraft Lab";
+				INFOPLIST_KEY_NSHandsTrackingUsageDescription = "ARCraft Lab follows your index fingertip and recognizes pinches to place cubes.";
+				INFOPLIST_KEY_NSWorldSensingUsageDescription = "ARCraft Lab anchors the cubes you place to the room so they are still there next time.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.muhittincamdali.ARCraftLab;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09DEA95614E1FE58159EA21F /* Build configuration list for PBXNativeTarget "ARCraftLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2909AFE299BA9CE6B4D879D1 /* Debug */,
+				F77114FB67BA3443B5FFE3AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3964AB3AA78628AA2A7A7364 /* Build configuration list for PBXProject "ARCraftLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				91A303B55EFEE7D3E836CDCE /* Debug */,
+				C7F09FD0113E43180E4C22D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		588AAF033FE1BA92B85F681A /* XCLocalSwiftPackageReference "../.." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6472FD280FEC3054E9EBF4C4 /* ARCraft */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ARCraft;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CDEA415BB1666A49FA56264C /* Project object */;
+}
