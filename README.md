@@ -47,7 +47,7 @@ entities.
   input: size-limited before parsing, versioned, and one damaged entry does not lose the rest.
 - **Works without a headset** — `SyntheticHand` builds hand poses for the simulator, previews and
   tests; `HandPose` is `Codable` for recording and replay.
-- **Tested** — 92 Swift Testing tests run on macOS and an iPhone simulator (94 on the visionOS
+- **Tested** — 100 Swift Testing tests run on macOS and an iPhone simulator (102 on the visionOS
   simulator, including the ARKit adapters), and every README sample below is compiled and run by
   the test target.
 
