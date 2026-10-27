@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft ist ein Swift-Paket für visionOS- und iOS-Apps, die Handtracking und Wo
 - **Platzierung auf Oberflächen** — `PlacementSolver` hält Inhalte auf Tischen aufrecht, an Wänden flach anliegend und zum Betrachter gedreht, optional mit Raster- und Drehwinkel-Einrasten; `SpatialBounds` passt Modelle unbekannter Größe in ein Volumen ein.
 - **Inhalte, die im Raum bleiben** — `AnchoredItem`, `AnchorResolver` und `PlacementStore` halten fest, was relativ zu welchem `WorldAnchor` platziert wurde, und lesen die Datei als nicht vertrauenswürdige Eingabe wieder ein: mit Größenlimit vor dem Parsen, versioniert, und ein beschädigter Eintrag lässt die übrigen nicht verloren gehen.
 - **Funktioniert ohne Headset** — `SyntheticHand` erzeugt Handposen für den Simulator, Previews und Tests; `HandPose` ist `Codable` für Aufnahme und Wiedergabe.
-- **Getestet** — 100 Swift-Testing-Tests laufen unter macOS und in einem iPhone-Simulator (102 im visionOS-Simulator, einschließlich der ARKit-Adapter), und jedes README-Beispiel unten wird vom Test-Target kompiliert und ausgeführt.
+- **Getestet** — 103 Swift-Testing-Tests laufen unter macOS und in einem iPhone-Simulator (105 im visionOS-Simulator, einschließlich der ARKit-Adapter), und jedes README-Beispiel unten wird vom Test-Target kompiliert und ausgeführt.
 
 ### Was enthalten ist
 

@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft est un package Swift pour les apps visionOS et iOS qui utilisent le suiv
 - **Placement sur les surfaces** — `PlacementSolver` garde le contenu vertical sur les tables, à plat contre les murs et tourné vers l’observateur, avec un magnétisme facultatif sur la grille et sur des pas de rotation ; `SpatialBounds` fait entrer dans un volume des modèles de taille inconnue.
 - **Un contenu qui reste dans la pièce** — `AnchoredItem`, `AnchorResolver` et `PlacementStore` enregistrent ce qui a été placé par rapport à quel `WorldAnchor`, et relisent le fichier comme une entrée non fiable : taille limitée avant l’analyse, versionné, et une entrée endommagée ne fait pas perdre les autres.
 - **Fonctionne sans casque** — `SyntheticHand` construit des poses de main pour le simulateur, les aperçus et les tests ; `HandPose` est `Codable` pour l’enregistrement et la relecture.
-- **Testé** — 100 tests Swift Testing s’exécutent sur macOS et sur un simulateur d’iPhone (102 sur le simulateur visionOS, adaptateurs ARKit compris), et chaque exemple du README ci-dessous est compilé et exécuté par la cible de tests.
+- **Testé** — 103 tests Swift Testing s’exécutent sur macOS et sur un simulateur d’iPhone (105 sur le simulateur visionOS, adaptateurs ARKit compris), et chaque exemple du README ci-dessous est compilé et exécuté par la cible de tests.
 
 ### Ce que contient le package
 

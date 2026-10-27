@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft 是一个 Swift 包，面向使用手部追踪和世界锚点（world an
 - **表面放置** — `PlacementSolver` 让内容在桌面上保持直立、在墙面上贴平并朝向观察者，还可选网格吸附和旋转吸附；`SpatialBounds` 可将尺寸未知的模型缩放进一个体积内。
 - **留在房间里的内容** — `AnchoredItem`、`AnchorResolver` 和 `PlacementStore` 记录相对于哪个 `WorldAnchor` 放置了什么，并把读回的文件视为不可信输入：解析前先检查大小限制、带有版本号，且单个损坏的条目不会导致其余条目丢失。
 - **没有头显也能用** — `SyntheticHand` 为模拟器、预览和测试生成手部姿态；`HandPose` 支持 `Codable`，可用于录制和回放。
-- **经过测试** — 100 个 Swift Testing 测试在 macOS 和 iPhone 模拟器上运行（在 visionOS 模拟器上为 102 个，包含 ARKit 适配层），并且下面每个 README 示例都由测试 target 编译并运行。
+- **经过测试** — 103 个 Swift Testing 测试在 macOS 和 iPhone 模拟器上运行（在 visionOS 模拟器上为 105 个，包含 ARKit 适配层），并且下面每个 README 示例都由测试 target 编译并运行。
 
 ### 包含的内容
 

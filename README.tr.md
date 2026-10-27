@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft, el takibi ve world anchor kullanan visionOS ve iOS uygulamaları için 
 - **Yüzey yerleştirme** — `PlacementSolver`, içeriği masalarda dik, duvarlarda yüzeye yatık ve izleyiciye dönük tutar; isteğe bağlı ızgara ve dönüş adımı ile oturtma da sunar. `SpatialBounds`, boyutu bilinmeyen modelleri bir hacme sığdırır.
 - **Odada kalan içerik** — `AnchoredItem`, `AnchorResolver` ve `PlacementStore`, neyin hangi `WorldAnchor`'a göre yerleştirildiğini kaydeder ve dosyayı güvenilmeyen girdi olarak geri okur: ayrıştırmadan önce boyut sınırı uygular, sürümlüdür ve tek bir bozuk kayıt diğerlerinin kaybolmasına yol açmaz.
 - **Headset olmadan çalışır** — `SyntheticHand`, simülatör, önizlemeler ve testler için el pozları üretir; `HandPose`, kayıt ve yeniden oynatma için `Codable`'dır.
-- **Test edilmiş** — 100 Swift Testing testi macOS'ta ve bir iPhone simülatöründe çalışır (visionOS simülatöründe ARKit adaptörleri dahil 102), ayrıca aşağıdaki her README örneği test hedefi tarafından derlenir ve çalıştırılır.
+- **Test edilmiş** — 103 Swift Testing testi macOS'ta ve bir iPhone simülatöründe çalışır (visionOS simülatöründe ARKit adaptörleri dahil 105), ayrıca aşağıdaki her README örneği test hedefi tarafından derlenir ve çalıştırılır.
 
 ### Neler dahil
 

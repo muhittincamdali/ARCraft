@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft는 핸드 트래킹과 월드 앵커를 사용하는 visionOS 및 iOS �
 - **표면 배치** — `PlacementSolver`는 콘텐츠를 테이블에서는 똑바로 세우고, 벽에서는 벽면에 붙여 눕히고, 사용자를 향하게 합니다. 격자 스냅과 회전 스냅도 선택적으로 쓸 수 있습니다. `SpatialBounds`는 크기를 알 수 없는 모델을 볼륨 안에 맞춰 줍니다.
 - **방에 남는 콘텐츠** — `AnchoredItem`, `AnchorResolver`, `PlacementStore`는 어떤 `WorldAnchor`를 기준으로 무엇을 배치했는지 기록하고, 다시 읽어 들이는 파일은 신뢰할 수 없는 입력으로 취급합니다. 파싱 전에 크기를 제한하고, 버전이 관리되며, 항목 하나가 손상되어도 나머지는 잃지 않습니다.
 - **헤드셋 없이도 동작** — `SyntheticHand`가 시뮬레이터, 프리뷰, 테스트용 손 포즈를 만들어 줍니다. `HandPose`는 `Codable`이라 녹화와 재생에 쓸 수 있습니다.
-- **테스트 완료** — Swift Testing 테스트 100개가 macOS와 iPhone 시뮬레이터에서 실행되며(visionOS 시뮬레이터에서는 ARKit 어댑터를 포함해 102개), 아래의 모든 README 예제는 테스트 타깃에서 컴파일되고 실행됩니다.
+- **테스트 완료** — Swift Testing 테스트 103개가 macOS와 iPhone 시뮬레이터에서 실행되며(visionOS 시뮬레이터에서는 ARKit 어댑터를 포함해 105개), 아래의 모든 README 예제는 테스트 타깃에서 컴파일되고 실행됩니다.
 
 ### 포함된 항목
 

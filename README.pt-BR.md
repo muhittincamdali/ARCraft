@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ O ARCraft é um pacote Swift para apps de visionOS e iOS que usam rastreamento d
 - **Posicionamento em superfícies** — o `PlacementSolver` mantém o conteúdo em pé nas mesas, rente às paredes e voltado para quem olha, com encaixe opcional em grade e em passos de rotação; o `SpatialBounds` ajusta modelos de tamanho desconhecido a um volume.
 - **Conteúdo que fica na sala** — `AnchoredItem`, `AnchorResolver` e `PlacementStore` registram o que foi posicionado em relação a qual `WorldAnchor` e leem o arquivo de volta como entrada não confiável: com limite de tamanho antes da análise, versionado, e uma entrada danificada não faz perder as demais.
 - **Funciona sem headset** — o `SyntheticHand` cria poses de mão para o simulador, os previews e os testes; o `HandPose` é `Codable`, para gravação e reprodução.
-- **Testado** — 100 testes do Swift Testing rodam no macOS e em um simulador de iPhone (102 no simulador do visionOS, incluindo os adaptadores do ARKit), e todo exemplo do README abaixo é compilado e executado pelo target de testes.
+- **Testado** — 103 testes do Swift Testing rodam no macOS e em um simulador de iPhone (105 no simulador do visionOS, incluindo os adaptadores do ARKit), e todo exemplo do README abaixo é compilado e executado pelo target de testes.
 
 ### O que está incluído
 

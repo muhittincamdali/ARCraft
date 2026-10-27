@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft es un paquete de Swift para apps de visionOS y iOS que usan seguimiento 
 - **Colocación en superficies** — `PlacementSolver` mantiene el contenido vertical en las mesas, plano contra las paredes y orientado hacia quien lo mira, con ajuste opcional a una cuadrícula y a pasos de rotación; `SpatialBounds` encaja en un volumen modelos de tamaño desconocido.
 - **Contenido que se queda en la habitación** — `AnchoredItem`, `AnchorResolver` y `PlacementStore` registran qué se colocó respecto a qué `WorldAnchor` y leen el archivo de vuelta como entrada no confiable: con límite de tamaño antes de analizarlo, con versión, y un elemento dañado no hace perder el resto.
 - **Funciona sin casco** — `SyntheticHand` genera poses de manos para el simulador, las previsualizaciones y las pruebas; `HandPose` es `Codable` para grabar y reproducir.
-- **Probado** — 100 pruebas de Swift Testing se ejecutan en macOS y en un simulador de iPhone (102 en el simulador de visionOS, con los adaptadores de ARKit), y el target de pruebas compila y ejecuta cada ejemplo del README que aparece más abajo.
+- **Probado** — 103 pruebas de Swift Testing se ejecutan en macOS y en un simulador de iPhone (105 en el simulador de visionOS, con los adaptadores de ARKit), y el target de pruebas compila y ejecuta cada ejemplo del README que aparece más abajo.
 
 ### Qué incluye
 

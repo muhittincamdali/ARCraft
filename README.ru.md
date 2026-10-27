@@ -1,4 +1,4 @@
-<!-- i18n-source: README.md@c964923478924fb650768a0ae2e1614eafd6cf3d status=reviewed -->
+<!-- i18n-source: README.md@82cfebf386a0495e4dc0d749638d4e7ac6f8f4d0 status=reviewed -->
 <!-- brand:start -->
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg"><img src="https://raw.githubusercontent.com/muhittincamdali/ARCraft/main/.github/brand/banner-light.svg" alt="ARCraft: Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."></picture></p>
@@ -34,7 +34,7 @@ ARCraft — это Swift-пакет для приложений visionOS и iOS,
 - **Размещение на поверхностях** — `PlacementSolver` держит контент вертикально на столах, плашмя на стенах и повёрнутым к пользователю, с необязательной привязкой к сетке и к шагу поворота; `SpatialBounds` вписывает модели неизвестного размера в объём.
 - **Контент, который остаётся в комнате** — `AnchoredItem`, `AnchorResolver` и `PlacementStore` записывают, что было размещено относительно какого `WorldAnchor`, и читают файл обратно как недоверенный ввод: с ограничением размера до разбора, с версией, а одна повреждённая запись не приводит к потере остальных.
 - **Работает без гарнитуры** — `SyntheticHand` строит позы рук для симулятора, превью и тестов; `HandPose` поддерживает `Codable` для записи и воспроизведения.
-- **Протестировано** — 100 тестов Swift Testing запускаются на macOS и в симуляторе iPhone (102 в симуляторе visionOS, включая адаптеры ARKit), а каждый пример из README ниже компилируется и выполняется тестовым таргетом.
+- **Протестировано** — 103 теста Swift Testing запускаются на macOS и в симуляторе iPhone (105 в симуляторе visionOS, включая адаптеры ARKit), а каждый пример из README ниже компилируется и выполняется тестовым таргетом.
 
 ### Что входит в пакет
 
