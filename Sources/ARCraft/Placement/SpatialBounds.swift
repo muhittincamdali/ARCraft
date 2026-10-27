@@ -57,8 +57,14 @@ public struct SpatialBounds: Sendable, Hashable {
 
     /// The translation that, after scaling by `scale`, puts the bottom center of the box at the
     /// origin, so the model rests on whatever its parent stands on.
+    ///
+    /// A `scale` that is not finite is treated as `1`. The result is always finite: a component
+    /// that would overflow, for example a coordinate of `1e30` scaled by `1e30`, is clamped to
+    /// `±Float.greatestFiniteMagnitude`.
     public func restingOffset(scale: Float = 1) -> SIMD3<Float> {
         let factor = scale.isFinite ? scale : 1
-        return -SIMD3(center.x, min.y, center.z) * factor
+        let offset = -SIMD3(center.x, min.y, center.z) * factor
+        let limit = SIMD3<Float>(repeating: .greatestFiniteMagnitude)
+        return simd_clamp(offset, -limit, limit)
     }
 }

@@ -54,6 +54,15 @@ struct EdgeCaseTests {
         #expect(high.restingOffset(scale: 1e-38).isFinite)
     }
 
+    @Test("A large but finite scale clamps the resting offset instead of returning infinity")
+    func restingOffsetOverflow() throws {
+        let bounds = try #require(SpatialBounds(min: SIMD3(-1e30, -1e30, 1e30), max: SIMD3(1e30, 1e30, 1e30)))
+        let offset = bounds.restingOffset(scale: 1e30)
+        #expect(offset.isFinite)
+        #expect(offset == SIMD3(0, .greatestFiniteMagnitude, -.greatestFiniteMagnitude))
+        #expect(bounds.restingOffset(scale: 2) == SIMD3(0, 2e30, -2e30))
+    }
+
     @Test("Composing poses that overflow is reported as non-finite and cannot be saved")
     func poseOverflow() {
         let far = Pose(position: SIMD3(repeating: .greatestFiniteMagnitude))
