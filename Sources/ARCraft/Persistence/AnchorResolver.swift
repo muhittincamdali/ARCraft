@@ -10,6 +10,9 @@ public enum ItemStatus: Sendable, Hashable {
     case anchorNotTracked(lastKnown: Pose)
     /// No anchor with the item's `anchorID` has been reported (yet).
     case anchorMissing
+    /// The anchor's pose and the item's offset overflow `Float` when combined, so the item has no
+    /// usable world pose. Do not show it; an archive with default limits never produces one.
+    case invalidPose
 }
 
 /// Keeps the latest state of each world anchor and tells you where each item belongs.
@@ -23,7 +26,7 @@ public enum ItemStatus: Sendable, Hashable {
 ///     for item in items {
 ///         switch resolver.status(of: item) {
 ///         case .placed(let pose): show(item, at: pose)
-///         case .anchorNotTracked, .anchorMissing: hide(item)
+///         case .anchorNotTracked, .anchorMissing, .invalidPose: hide(item)
 ///         }
 ///     }
 /// }
@@ -57,10 +60,12 @@ public struct AnchorResolver: Sendable {
         anchors[anchorID] = nil
     }
 
-    /// Where `item` is right now.
+    /// Where `item` is right now. Never returns a pose that is not finite: a combination that
+    /// overflows is reported as ``ItemStatus/invalidPose``.
     public func status(of item: AnchoredItem) -> ItemStatus {
         guard let anchor = anchors[item.anchorID] else { return .anchorMissing }
         let pose = item.worldPose(anchorPose: anchor.pose)
+        guard pose.isFinite else { return .invalidPose }
         return anchor.isTracked ? .placed(pose) : .anchorNotTracked(lastKnown: pose)
     }
 

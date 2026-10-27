@@ -45,7 +45,7 @@ struct LiveSpaceView: View {
             case .placed(let pose):
                 entity.isEnabled = true
                 entity.setPose(pose)
-            case .anchorNotTracked, .anchorMissing:
+            case .anchorNotTracked, .anchorMissing, .invalidPose:
                 entity.isEnabled = false
             }
         }

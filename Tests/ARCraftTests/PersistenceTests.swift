@@ -89,12 +89,30 @@ struct PlacementArchiveTests {
 
     @Test("Limits are kept within a sane range")
     func limitClamps() {
-        let limits = PlacementArchive.Limits(maxBytes: .max, maxItems: -5, maxKindLength: 0, maxAttributes: -1, maxAttributeLength: 0)
+        let limits = PlacementArchive.Limits(maxBytes: .max, maxItems: -5, maxKindLength: 0, maxAttributes: -1,
+                                             maxAttributeLength: 0, maxOffsetDistance: -3)
         #expect(limits.maxBytes == PlacementArchive.Limits.maxBytesCeiling)
         #expect(limits.maxItems == 1)
         #expect(limits.maxKindLength == 1)
         #expect(limits.maxAttributes == 1)
         #expect(limits.maxAttributeLength == 1)
+        #expect(limits.maxOffsetDistance == 1)
+        #expect(PlacementArchive.Limits(maxOffsetDistance: .infinity).maxOffsetDistance == PlacementArchive.Limits.maxOffsetDistanceCeiling)
+        #expect(PlacementArchive.Limits(maxOffsetDistance: .nan).maxOffsetDistance == PlacementArchive.Limits.defaultMaxOffsetDistance)
+    }
+
+    @Test("Offsets farther than maxOffsetDistance are skipped on read and refused on write")
+    func farOffsets() throws {
+        let json = """
+        {"version":1,"items":[{"id":"\(UUID())","anchorID":"\(anchorID)","kind":"lamp",
+          "offset":{"position":[3e38,3e38,3e38],"orientation":[0,0,0,1]},"attributes":{}}]}
+        """
+        let contents = try archive.decode(Data(json.utf8))
+        #expect(contents.items.isEmpty)
+        #expect(contents.rejectedCount == 1)
+        let far = item(x: 10_001)
+        #expect(throws: PlacementArchiveError.invalidItem(id: far.id)) { try archive.encode([far]) }
+        #expect(archive.isValid(item(x: 10_000)))
     }
 
     @Test("Attribute limits are measured in UTF-8 bytes")
@@ -129,6 +147,17 @@ struct AnchorResolverTests {
         #expect(resolver.status(of: item()) == .anchorNotTracked(lastKnown: anchorPose))
         resolver.remove(anchorID: anchorID)
         #expect(resolver.status(of: item()) == .anchorMissing)
+    }
+
+    @Test("An offset that overflows from a rotated anchor is reported as invalidPose, not placed")
+    func overflowingOffset() {
+        var resolver = AnchorResolver()
+        let rotated = Pose(position: SIMD3(0, 0.8, -1), orientation: simd_quatf(angle: .pi / 4, axis: SIMD3(0, 1, 0)))
+        let huge = AnchoredItem(anchorID: anchorID, kind: "lamp", offset: Pose(position: SIMD3(repeating: 3e38)))
+        resolver.update(WorldAnchorState(id: anchorID, pose: rotated))
+        #expect(resolver.status(of: huge) == .invalidPose)
+        resolver.update(WorldAnchorState(id: anchorID, pose: rotated, isTracked: false))
+        #expect(resolver.status(of: huge) == .invalidPose)
     }
 
     @Test("An item created at a world pose comes back at that pose")

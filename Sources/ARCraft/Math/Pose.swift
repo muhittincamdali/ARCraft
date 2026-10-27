@@ -5,7 +5,8 @@ import simd
 /// ARKit and RealityKit hand out `simd_float4x4` matrices. `Pose` is the value ARCraft stores,
 /// filters and persists instead: it cannot carry scale or shear, it is `Codable`, and both
 /// ``init(matrix:)`` and decoding reject NaN and infinite values, so a corrupt matrix or file
-/// never reaches your scene.
+/// never reaches your scene. Composing poses with `*` can still overflow near `Float`'s limit;
+/// check ``isFinite`` on the result, as ``AnchorResolver/status(of:)`` does.
 ///
 /// ```swift
 /// let anchorPose = Pose(matrix: worldAnchor.originFromAnchorTransform)

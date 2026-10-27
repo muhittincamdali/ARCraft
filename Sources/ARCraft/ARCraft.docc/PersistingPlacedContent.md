@@ -54,6 +54,7 @@ for await update in worldTracking.anchorUpdates {
         case .placed(let pose): show(item, at: pose)
         case .anchorNotTracked: hide(item)        // in another room, or not relocalized yet
         case .anchorMissing: hide(item)           // not reported (yet) in this session
+        case .invalidPose: hide(item)             // the offset overflows from this anchor
         }
     }
 }

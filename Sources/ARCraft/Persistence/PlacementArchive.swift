@@ -1,4 +1,5 @@
 import Foundation
+import simd
 
 /// Why a placement archive could not be written or read.
 public enum PlacementArchiveError: Error, Sendable, Hashable {
@@ -10,7 +11,8 @@ public enum PlacementArchiveError: Error, Sendable, Hashable {
     case unsupportedVersion(Int)
     /// The data is not a placement archive.
     case malformed
-    /// An item breaks a limit or has a non-finite offset, so it would not survive a round trip.
+    /// An item breaks a limit or has a non-finite or out-of-range offset, so it would not survive a
+    /// round trip.
     case invalidItem(id: UUID)
     /// Two items share an identifier.
     case duplicateItem(id: UUID)
@@ -42,19 +44,31 @@ public struct PlacementArchive: Sendable, Hashable {
         public let maxAttributes: Int
         /// The longest attribute key or value, in UTF-8 bytes.
         public let maxAttributeLength: Int
+        /// The farthest an item may sit from its anchor, in meters. Keeps a damaged offset from
+        /// overflowing to infinity once it is combined with the anchor's pose.
+        public let maxOffsetDistance: Float
 
         /// The largest value ``maxBytes`` accepts: 256 MiB.
         public static let maxBytesCeiling = 268_435_456
+        /// The default for ``maxOffsetDistance``: 10 km, far beyond any room or building.
+        public static let defaultMaxOffsetDistance: Float = 10_000
+        /// The largest value ``maxOffsetDistance`` accepts: 1,000 km.
+        public static let maxOffsetDistanceCeiling: Float = 1_000_000
 
-        /// Creates limits. Values below 1 are raised to 1, and `maxBytes` is capped at
-        /// ``maxBytesCeiling``.
+        /// Creates limits. Values below 1 are raised to 1, `maxBytes` is capped at
+        /// ``maxBytesCeiling`` and `maxOffsetDistance` at ``maxOffsetDistanceCeiling``; a NaN
+        /// `maxOffsetDistance` falls back to ``defaultMaxOffsetDistance``.
         public init(maxBytes: Int = 1_048_576, maxItems: Int = 1_000, maxKindLength: Int = 128,
-                    maxAttributes: Int = 16, maxAttributeLength: Int = 1_024) {
+                    maxAttributes: Int = 16, maxAttributeLength: Int = 1_024,
+                    maxOffsetDistance: Float = Limits.defaultMaxOffsetDistance) {
             self.maxBytes = min(max(maxBytes, 1), Self.maxBytesCeiling)
             self.maxItems = max(maxItems, 1)
             self.maxKindLength = max(maxKindLength, 1)
             self.maxAttributes = max(maxAttributes, 1)
             self.maxAttributeLength = max(maxAttributeLength, 1)
+            self.maxOffsetDistance = maxOffsetDistance.isNaN
+                ? Self.defaultMaxOffsetDistance
+                : min(max(maxOffsetDistance, 1), Self.maxOffsetDistanceCeiling)
         }
     }
 
@@ -74,10 +88,13 @@ public struct PlacementArchive: Sendable, Hashable {
         self.limits = limits
     }
 
-    /// `true` when `item` fits the limits and has a finite offset.
+    /// `true` when `item` fits the limits and has a finite offset within
+    /// ``Limits/maxOffsetDistance`` of its anchor.
     public func isValid(_ item: AnchoredItem) -> Bool {
         let kindLength = item.kind.utf8.count
+        // simd_length overflows to infinity for huge components, which fails the comparison too.
         guard kindLength > 0, kindLength <= limits.maxKindLength, item.offset.isFinite,
+              simd_length(item.offset.position) <= limits.maxOffsetDistance,
               item.attributes.count <= limits.maxAttributes else { return false }
         return item.attributes.allSatisfy { key, value in
             !key.isEmpty && key.utf8.count <= limits.maxAttributeLength && value.utf8.count <= limits.maxAttributeLength

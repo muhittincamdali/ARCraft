@@ -34,6 +34,9 @@ public struct AnchoredItem: Sendable, Hashable, Codable, Identifiable {
     }
 
     /// The item's world pose when its anchor is at `anchorPose`.
+    ///
+    /// The result is not finite when the composition overflows `Float`, for example for an offset
+    /// near `Float.greatestFiniteMagnitude`. ``AnchorResolver/status(of:)`` checks this for you.
     public func worldPose(anchorPose: Pose) -> Pose {
         anchorPose * offset
     }

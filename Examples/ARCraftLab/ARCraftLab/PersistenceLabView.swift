@@ -111,6 +111,7 @@ enum RoomArchiveDemo {
         case .placed(let pose): String(format: "at %.2f, %.2f, %.2f", pose.position.x, pose.position.y, pose.position.z)
         case .anchorNotTracked: "anchor not tracked"
         case .anchorMissing: "anchor missing"
+        case .invalidPose: "offset out of range"
         }
     }
 }
