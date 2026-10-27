@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-28
+
 ARCraft is rebuilt around the parts of spatial apps that RealityKit and ARKit leave to the app.
 The SwiftUI-style RealityKit wrapper added after 1.0.0 and the placeholder actors that replaced
 it in June 2026 are removed; RealityKit's own APIs cover what the wrapper did.
@@ -57,5 +59,6 @@ it in June 2026 are removed; RealityKit's own APIs cover what the wrapper did.
 
 - Package manifest, MIT license and a CI workflow. The tag contains no library sources.
 
-[Unreleased]: https://github.com/muhittincamdali/ARCraft/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/muhittincamdali/ARCraft/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/muhittincamdali/ARCraft/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/muhittincamdali/ARCraft/releases/tag/v1.0.0

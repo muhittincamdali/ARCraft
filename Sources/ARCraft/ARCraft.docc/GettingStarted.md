@@ -10,7 +10,7 @@ and add the **ARCraft** library to your app target. In a package, add it to `Pac
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/muhittincamdali/ARCraft.git", branch: "main")
+    .package(url: "https://github.com/muhittincamdali/ARCraft.git", from: "1.1.0")
 ],
 targets: [
     .target(name: "MyApp", dependencies: [
