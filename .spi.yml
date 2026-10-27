@@ -1,0 +1,9 @@
+version: 1
+builder:
+  configs:
+    - platform: ios
+      scheme: ARCraft
+      documentation_targets: [ARCraft]
+    - platform: macos-spm
+    - platform: visionos
+      scheme: ARCraft

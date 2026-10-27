@@ -1,0 +1,43 @@
+{
+  "name": "ARCraft",
+  "repository": "muhittincamdali/ARCraft",
+  "tagline": {
+    "en": "Hand gestures, jitter filters, surface placement and world anchor persistence for visionOS and iOS apps."
+  },
+  "tags": {
+    "en": [
+      "visionOS · iOS",
+      "Swift 6",
+      "RealityKit",
+      "No dependencies"
+    ]
+  },
+  "motif": "phone",
+  "buttons": [
+    "start",
+    "docs",
+    "examples"
+  ],
+  "links": {
+    "docs": "https://muhittincamdali.github.io/ARCraft/documentation/arcraft/",
+    "examples": "Examples/"
+  },
+  "languages": [
+    "en",
+    "tr",
+    "zh-CN",
+    "ja",
+    "ko",
+    "es",
+    "de",
+    "fr",
+    "pt-BR",
+    "ru"
+  ],
+  "docc": {
+    "targets": [
+      "ARCraft"
+    ]
+  },
+  "socialTheme": "dark"
+}
