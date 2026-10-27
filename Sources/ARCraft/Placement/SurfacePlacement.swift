@@ -53,7 +53,8 @@ public struct Placement: Sendable, Hashable {
 
 /// Why ``PlacementSolver`` could not place content.
 public enum PlacementError: Error, Sendable, Hashable {
-    /// The hit position or normal is zero, NaN or infinite.
+    /// The hit position or normal is zero, NaN or infinite, or the result would not be finite
+    /// (a position near the limit of `Float`).
     case invalidHit
     /// The viewer position is NaN or infinite.
     case invalidViewer
@@ -121,12 +122,14 @@ public struct PlacementSolver: Sendable, Hashable {
         guard viewer.isFinite else { throw .invalidViewer }
         guard options.allowedSurfaces.contains(surface) else { throw .surfaceNotAllowed(surface) }
         let lifted = hit.position + normal * options.surfaceOffset
+        guard lifted.isFinite else { throw .invalidHit }
         let pose = switch surface {
         case .wall: wallPose(at: lifted, normal: normal)
         case .floor: standingPose(at: lifted, up: options.alignsToSurfaceNormal ? normal : SpatialMath.worldUp, viewer: viewer)
         case .ceiling: standingPose(at: lifted, up: SpatialMath.worldUp, viewer: viewer)
         case .slope: standingPose(at: lifted, up: normal, viewer: viewer)
         }
+        guard pose.isFinite else { throw .invalidHit }
         return Placement(pose: pose, surface: surface)
     }
 

@@ -34,8 +34,8 @@ public struct SpatialBounds: Sendable, Hashable {
     /// The size along each axis.
     public var extents: SIMD3<Float> { max - min }
 
-    /// The midpoint.
-    public var center: SIMD3<Float> { (min + max) / 2 }
+    /// The midpoint. Computed as `min / 2 + max / 2` so it cannot overflow near `Float`'s limit.
+    public var center: SIMD3<Float> { min / 2 + max / 2 }
 
     /// The uniform scale that makes the box fit inside `target` (a size along each axis).
     ///
@@ -45,10 +45,11 @@ public struct SpatialBounds: Sendable, Hashable {
     public func scaleToFit(_ target: SIMD3<Float>, allowsUpscaling: Bool = false) -> Float {
         var scale = Float.infinity
         for axis in 0..<3 {
-            let size = extents[axis]
+            // Half sizes, so a box spanning nearly all of Float's range does not overflow to infinity.
+            let halfSize = max[axis] / 2 - min[axis] / 2
             let limit = target[axis]
-            guard size > SpatialMath.epsilon, limit.isFinite, limit > 0 else { continue }
-            scale = Swift.min(scale, limit / size)
+            guard halfSize > SpatialMath.epsilon / 2, limit.isFinite, limit > 0 else { continue }
+            scale = Swift.min(scale, (limit / 2) / halfSize)
         }
         guard scale.isFinite, scale > 0 else { return 1 }
         return allowsUpscaling ? scale : Swift.min(scale, 1)
