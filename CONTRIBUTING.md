@@ -1,80 +1,63 @@
-# Contributing to SwiftRouter
+# Contributing
 
-First off, thank you for considering contributing to SwiftRouter! It's people like you that make SwiftRouter such a great tool.
+Thanks for taking the time to improve ARCraft.
 
-## Code of Conduct
+## Reporting bugs
 
-This project and everyone participating in it is governed by our Code of Conduct. By participating, you are expected to uphold this code.
+Open an issue with:
 
-## How Can I Contribute?
+- the type and the values you passed (for hand gestures, a recorded `HandPose` as JSON helps:
+  `HandPose` is `Codable`),
+- what you expected and what happened,
+- the platform and OS version (device or simulator) and the Xcode version.
 
-### Reporting Bugs
+Do not attach recordings of real hands or room scans you do not want to make public.
 
-Before creating bug reports, please check the existing issues as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible:
+## Pull requests
 
-- **Use a clear and descriptive title**
-- **Describe the exact steps which reproduce the problem**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the behavior you observed after following the steps**
-- **Explain which behavior you expected to see instead and why**
-- **Include Swift version and OS version**
+1. Fork the repository and branch from `main`.
+2. Keep each pull request focused on one change.
+3. Run the tests on macOS and on the simulators:
 
-### Suggesting Enhancements
+    ```sh
+    swift test
+    xcodebuild test -scheme ARCraft \
+      -destination 'platform=iOS Simulator,name=iPhone 17 Pro'
+    xcodebuild test -scheme ARCraft \
+      -destination 'platform=visionOS Simulator,name=Apple Vision Pro'
+    ```
 
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
+    The ARKit adapters only compile for visionOS, so run the visionOS tests when you touch
+    `Sources/ARCraft/Platform/ARKit+ARCraft.swift`.
 
-- **Use a clear and descriptive title**
-- **Provide a step-by-step description of the suggested enhancement**
-- **Provide specific examples to demonstrate the steps**
-- **Describe the current behavior and explain which behavior you expected to see instead**
-- **Explain why this enhancement would be useful**
+4. Add or update a test in `Tests/ARCraftTests` for every logic change. Code that accepts outside
+   input (matrices, decoded data, configuration values, files) must reject or clamp NaN,
+   infinite, negative and oversized values, with a test for each case.
+5. If you change a README code sample, change the copy in
+   `Examples/ARCraftLab/ARCraftLab/ReadmeSamples.swift` as well. That file is what gets compiled:
+   by the example app, and by `swift test` through the symlink
+   `Tests/ARCraftTests/ReadmeExamples.swift`. Build the app with:
 
-### Pull Requests
+    ```sh
+    cd Examples/ARCraftLab
+    xcodebuild build -scheme ARCraftLab -destination 'generic/platform=visionOS Simulator'
+    xcodebuild build -scheme ARCraftLab -destination 'generic/platform=iOS Simulator'
+    ```
 
-1. Fork the repo and create your branch from `main`
-2. If you've added code that should be tested, add tests
-3. If you've changed APIs, update the documentation
-4. Ensure the test suite passes
-5. Make sure your code follows the existing style (SwiftLint)
-6. Issue that pull request!
+6. If a change affects the example app's screens, regenerate the screenshots with
+   `scripts/capture-example-screens.sh`.
+7. `README.md` will get translations (`README.<language>.md`). Each one records the version of
+   `README.md` it follows, and CI reports a translation that is behind. If you change
+   `README.md` and cannot update the translations, say so in the pull request.
 
-## Development Setup
+## Code style
 
-```bash
-# Clone your fork
-git clone https://github.com/YOUR_USERNAME/SwiftRouter.git
-
-# Navigate to the project
-cd SwiftRouter
-
-# Open in Xcode
-open Package.swift
-
-# Run tests
-swift test
-```
-
-## Style Guide
-
-- Follow [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)
-- Use SwiftLint for code style consistency
-- Write meaningful commit messages following [Conventional Commits](https://www.conventionalcommits.org/)
-- Document public APIs with DocC-compatible comments
-
-## Commit Messages
-
-We follow the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-- `feat:` A new feature
-- `fix:` A bug fix
-- `docs:` Documentation only changes
-- `style:` Code style changes (formatting, semicolons, etc)
-- `refactor:` Code change that neither fixes a bug nor adds a feature
-- `test:` Adding missing tests
-- `chore:` Changes to the build process or auxiliary tools
-
-Example: `feat(deeplink): add universal link support`
+- Follow the [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/).
+- The package builds in the Swift 6 language mode; new code should not add warnings.
+- Document public API with DocC comments (`///`); `xcodebuild docbuild` should report no warnings.
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
+  (`feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `ci:`, `chore:`).
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing you agree that your contributions are licensed under the MIT License.
