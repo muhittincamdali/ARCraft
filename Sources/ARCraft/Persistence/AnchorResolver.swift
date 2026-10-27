@@ -14,7 +14,7 @@ public enum ItemStatus: Sendable, Hashable {
 
 /// Keeps the latest state of each world anchor and tells you where each item belongs.
 ///
-/// Feed it the anchor updates from ARKit (on visionOS, ``apply(_:)`` takes an
+/// Feed it the anchor updates from ARKit (on visionOS, `apply(_:)` takes an
 /// `AnchorUpdate<WorldAnchor>` directly), then ask for an item's ``ItemStatus``.
 ///
 /// ```swift

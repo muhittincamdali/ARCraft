@@ -5,7 +5,9 @@ import RealityKit
 extension Entity {
     /// Moves and turns the entity to `pose` without changing its scale.
     ///
-    /// - Parameter reference: The entity whose space `pose` is in; `nil` means world space.
+    /// - Parameters:
+    ///   - pose: The position and orientation to apply.
+    ///   - reference: The entity whose space `pose` is in; `nil` means world space.
     public func setPose(_ pose: Pose, relativeTo reference: Entity? = nil) {
         setPosition(pose.position, relativeTo: reference)
         setOrientation(pose.orientation, relativeTo: reference)
