@@ -45,8 +45,8 @@ remap = [
   '^https://github\.com/muhittincamdali/ARCraft/(?:blob|tree)/main/(.*)$ file:///home/runner/work/ARCraft/ARCraft/$1',
   # The article pages on GitHub Pages are built from the .docc articles by docs.yml after a push
   # to main, so a pull request that adds an article links to a page that is not online yet. Each
-  # article URL is checked against its source file instead; the documentation root stays a live
-  # check, so a site that is down still fails.
+  # article URL, and the documentation root, is checked against its source file instead.
+  '^https://muhittincamdali\.github\.io/ARCraft/documentation/arcraft/?$ file:///home/runner/work/ARCraft/ARCraft/Sources/ARCraft/ARCraft.docc/ARCraft.md',
   '^https://muhittincamdali\.github\.io/ARCraft/documentation/arcraft/gettingstarted$ file:///home/runner/work/ARCraft/ARCraft/Sources/ARCraft/ARCraft.docc/GettingStarted.md',
   '^https://muhittincamdali\.github\.io/ARCraft/documentation/arcraft/recognizinghandgestures$ file:///home/runner/work/ARCraft/ARCraft/Sources/ARCraft/ARCraft.docc/RecognizingHandGestures.md',
   '^https://muhittincamdali\.github\.io/ARCraft/documentation/arcraft/smoothingtrackingdata$ file:///home/runner/work/ARCraft/ARCraft/Sources/ARCraft/ARCraft.docc/SmoothingTrackingData.md',
